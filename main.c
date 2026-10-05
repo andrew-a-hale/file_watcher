@@ -100,6 +100,10 @@ int traverse_fs(Buffer *path, Watcher *watcher) {
 }
 
 int main(int argc, char **argv) {
+  if (argc < 2) {
+    printf("ERROR: expected 2 args, path and cmd");
+  }
+
   Buffer root = (Buffer){.capacity = MAX_CMD_LEN, .length = 0};
   append_buffer(&root, *(++argv), "");
   Buffer path = root;
