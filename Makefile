@@ -1,5 +1,5 @@
 default:
-	gcc main.c -o main -Wall -fsanitize=address -O2
+	gcc main.c -o fw -Wall -O3
 
 test: default
 	./main . echo "change!"

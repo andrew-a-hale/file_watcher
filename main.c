@@ -100,8 +100,9 @@ int traverse_fs(Buffer *path, Watcher *watcher) {
 }
 
 int main(int argc, char **argv) {
-  if (argc < 2) {
-    printf("ERROR: expected 2 args, path and cmd");
+  if (argc < 3) {
+    printf("ERROR: expected 2 args, path and cmd, got %d\n", argc - 1);
+    return 1;
   }
 
   Buffer root = (Buffer){.capacity = MAX_CMD_LEN, .length = 0};
